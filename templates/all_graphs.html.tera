@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+    <head>
+        <meta name="viewport"
+            content="width=device-width, initial-scale=1">
+        <link rel="stylesheet"
+            href="https://www.w3schools.com/w3css/4/w3.css">
+    </head>
+    <body>
+        <div class="w3-bar w3-light-gray">
+            <div class="w3-button">
+                <b>Blog</b>
+            </div>
+        </div>
+
+        <div class="w3-content">
+          {% for data_source, graph_files in data_sources_with_files %}
+          <div>
+            <div>
+              {{loop.index}}: {{data_source}}
+            </div>
+            <div>
+              {% for graph_file in graph_files %}
+              <div>
+                graph_file: {{graph_file}}
+              </div>
+              <div>
+                <img src="/graph/{{graph_file}}" alt="graph {{data_source}}">
+              </div>
+              {% endfor %}
+            </div>
+          </div>
+          {% endfor %}
+
+
+            <!-- {% block content %} -->
+            <!-- {% endblock content %} -->
+        </div>
+    </body>
+</html>
