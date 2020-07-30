@@ -12,13 +12,17 @@ use rocket::Request;
 use rocket::response::content::Content;
 use rocket::http::ContentType;
 
-use rocket_contrib::templates::Template;
+// use rocket_contrib::templates::Template;
 
 // use tera::Context;
 
 
 #[macro_use] extern crate rocket;
+#[macro_use] extern crate rocket_include_tera;
 #[macro_use] extern crate lazy_static;
+
+use rocket_include_tera::{TeraResponse// , TeraContextManager
+};
 
 
 // TODO: Replace default handler for following HTTP codes.
@@ -124,7 +128,7 @@ fn graph(
 
 
 #[get("/all_graphs")]
-fn all_graphs() -> Template {
+fn all_graphs() -> TeraResponse {
     let abs_path_part = String::from(&*DATA_SOURCE_BASE_PATH) + "/";
     let data_sources_with_files: HashMap<_, _> =
         available_rrd_data_sources()
@@ -142,13 +146,12 @@ fn all_graphs() -> Template {
 
     context.insert("data_sources_with_files", &data_sources_with_files);
 
-    let temp = Template::render("all_graphs", &context);
-    temp
+    tera_response!("all_graphs", &context)
 }
 
 
 #[get("/")]
-fn index() -> Template {
+fn index() -> TeraResponse {
     all_graphs()
 }
 
@@ -167,6 +170,11 @@ fn main() {
             all_graphs,
             index
         ])
-        .attach(Template::fairing())
+        .attach(TeraResponse::fairing(|tera| {
+            tera_resources_initialize!(
+                tera,
+                "all_graphs",  "templates/all_graphs.html.tera"
+            );
+        }))
         .launch();
 }

@@ -16,6 +16,7 @@ description = "Steel-Copper is a simple system monitoring tool which uses rrdgra
 rocket = "0.4.5"
 tera = "*"
 lazy_static = "*"
+rocket-include-tera = "*" # "0.4.19"
 
 [dependencies.rocket_contrib]
 version = "0.4.5"
