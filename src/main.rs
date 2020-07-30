@@ -148,8 +148,8 @@ fn all_graphs() -> Template {
 
 
 #[get("/")]
-fn index() -> &'static str {
-    "Mein Schwein ist das beste!"
+fn index() -> Template {
+    all_graphs()
 }
 
 
