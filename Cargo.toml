@@ -4,8 +4,13 @@ version = "0.1.0"
 authors = ["Bjoern Griebenow <b.griebenow@web.de>"]
 edition = "2018"
 
-# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+# build = "build/main.rs"
+repository = "https://github.com/schanur/steel-copper"
+
+#documentation = "https://docs.rs/steel-copper"
+readme = "README.md"
 license = "MIT/Apache-2.0"
+description = "Steel-Copper is a simple system monitoring tool which uses rrdgraph to generate graphs and rocket as web server."
 
 [dependencies]
 rocket = "0.4.5"
