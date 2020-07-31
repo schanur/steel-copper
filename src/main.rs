@@ -89,8 +89,8 @@ fn rrdgraph_command(args: Vec<&str>) -> Vec<u8> {
         .arg("--start").arg("-86400")
         .arg("-u").arg("100")
         .arg("-l").arg("0")
-        .arg("-w").arg("1000") // width
-        .arg("-h").arg("400")  // height
+        .arg("-w").arg("700") // width
+        .arg("-h").arg("100")  // height
         .arg("-r")
         .args(args)
         .output().expect("").stdout
