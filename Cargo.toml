@@ -11,6 +11,10 @@ repository = "https://github.com/schanur/steel-copper"
 readme = "README.md"
 license = "MIT/Apache-2.0"
 description = "Steel-Copper is a simple system monitoring tool which uses rrdgraph to generate graphs and rocket as web server."
+homepage = "https://github.com/schanur/steel-copper"
+keywords = ["monitoring", "graph", "rrdtool", "rrdgraph", "load"]
+categories = ["value-formatting", "visualization", "web-programming::http-server", "database"]
+
 
 [dependencies]
 rocket = "0.4.5"
