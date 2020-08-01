@@ -61,6 +61,18 @@ fn not_found(req: &Request) -> String {
 }
 
 
+#[get("/favicon.ico")]
+fn favicon() -> StaticResponse {
+    static_response!("favicon.ico")
+}
+
+
+#[get("/favicon-16.png")]
+fn favicon_16_png() -> StaticResponse {
+    static_response!("favicon-16.png")
+}
+
+
 fn available_rrd_data_sources() -> std::vec::Vec<String> {
     fs::read_dir(&*DATA_SOURCE_BASE_PATH).unwrap()
         .map(
@@ -171,8 +183,18 @@ fn main() {
             graph_cpu_0,
             graph,
             all_graphs,
-            index
+            index,
+            favicon,
+            favicon_16_png
         ])
+        .attach(StaticResponse::fairing(|resources| {
+            static_resources_initialize!(
+                resources,
+                "favicon.ico",     "static/front-end/images/favicon.ico",
+                "favicon-16.png",  "static/front-end/images/favicon-16.png",
+                // "html-readme", "static/front-end/html/README.html",
+            );
+        }))
         .attach(TeraResponse::fairing(|tera| {
             tera_resources_initialize!(
                 tera,
