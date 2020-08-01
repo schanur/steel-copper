@@ -19,10 +19,13 @@ use rocket::http::ContentType;
 
 #[macro_use] extern crate rocket;
 #[macro_use] extern crate rocket_include_tera;
+#[macro_use] extern crate rocket_include_static_resources;
 #[macro_use] extern crate lazy_static;
 
 use rocket_include_tera::{TeraResponse// , TeraContextManager
 };
+
+use rocket_include_static_resources::StaticResponse;
 
 
 // TODO: Replace default handler for following HTTP codes.
