@@ -86,7 +86,7 @@ fn rrdgraph_command(args: Vec<&str>) -> Vec<u8> {
         Command::new("rrdtool")
         .arg("graph")
         .arg("-")              // write to stdout
-        .arg("--start").arg("-86400")
+        .arg("--start").arg((-86400 * 2).to_string())
         .arg("-u").arg("100")
         .arg("-l").arg("0")
         .arg("-w").arg("700") // width
