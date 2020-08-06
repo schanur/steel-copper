@@ -12,3 +12,10 @@ Steel-Copper is a web-server which renders rrd database files to graphs using rr
 
 * collectd is required to create/update periodic sample databases (rrd database files).
 * rrdgraph is required to render the graphs. On most Linux distributions, the tool is included in the rrdtool package.
+
+## Build
+
+```
+cargo build --release
+```
+builds a single executable file steel-copper in the directory target/release.
