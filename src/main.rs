@@ -33,8 +33,9 @@ use rocket_include_static_resources::StaticResponse;
 
 
 lazy_static! {
-    static ref DATA_SOURCE_BASE_PATH: String = {
-        let data_source_base_path = fs::read_dir("/var/lib/collectd/rrd/")
+   static ref DATA_SOURCE_BASE_PATH: String = {
+       // Ugliest piece of Rust code I have written so far.
+       let data_source_base_path = fs::read_dir("/var/lib/collectd/rrd/")
             .unwrap()
             .next()
             .unwrap()
