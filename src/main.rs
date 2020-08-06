@@ -117,8 +117,8 @@ fn rrdgraph_command(args: Vec<&str>) -> Vec<u8> {
         .arg("--start").arg((-86400 * 2).to_string())
         .arg("-u").arg("100")
         .arg("-l").arg("0")
-        .arg("-w").arg("700") // width
-        .arg("-h").arg("100")  // height
+        .arg("-w").arg("800") // width
+        .arg("-h").arg("200")  // height
         .arg("-r")
         .args(args)
         .args(RRDGRAPH_COLOR_THEME_DARK)
