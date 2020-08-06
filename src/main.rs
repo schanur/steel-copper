@@ -110,12 +110,11 @@ fn rrd_files_in_data_source(data_source_name: &str) -> std::vec::Vec<String> {
 
 
 fn rrdgraph_command(args: Vec<&str>) -> Vec<u8> {
-    // let command =
-        Command::new("rrdtool")
+    Command::new("rrdtool")
         .arg("graph")
         .arg("-")              // write to stdout
         .arg("--start").arg((-86400 * 2).to_string())
-        .arg("-u").arg("100")
+        // .arg("-u").arg("100")
         .arg("-l").arg("0")
         .arg("-w").arg("800") // width
         .arg("-h").arg("200")  // height
