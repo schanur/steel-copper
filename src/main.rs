@@ -49,6 +49,18 @@ lazy_static! {
     };
 }
 
+const RRDGRAPH_COLOR_THEME_DARK: &'static [&'static str] = &[
+        "-c", "BACK#000000",
+        "-c", "SHADEA#000000",
+        "-c", "SHADEB#000000",
+        "-c", "FONT#DDDDDD",
+        "-c", "CANVAS#202020",
+        "-c", "GRID#666666",
+        "-c", "MGRID#AAAAAA",
+        "-c", "FRAME#202020",
+        "-c", "ARROW#FFFFFF",
+];
+
 
 #[catch(500)]
 fn internal_error() -> &'static str {
@@ -109,6 +121,7 @@ fn rrdgraph_command(args: Vec<&str>) -> Vec<u8> {
         .arg("-h").arg("100")  // height
         .arg("-r")
         .args(args)
+        .args(RRDGRAPH_COLOR_THEME_DARK)
         .output().expect("").stdout
 }
 
