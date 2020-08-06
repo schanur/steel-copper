@@ -17,8 +17,8 @@ If you want to modify startup parameter (TCP port, etc.), you have multiple opti
 
 ## Dependencies
 
-* collectd is required to create/update periodic sample databases (rrd database files).
-* rrdgraph is required to render the graphs. On most Linux distributions, the tool is included in the rrdtool package.
+* collectd service has to be installed and running to create/update periodic sample databases (rrd database files).
+* rrdgraph binary is required to render the graphs. On most Linux distributions, the tool is included in the rrdtool package.
 
 ## Build
 
