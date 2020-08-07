@@ -26,3 +26,7 @@ If you want to modify startup parameter (TCP port, etc.), you have multiple opti
 cargo build --release
 ```
 builds a single executable file steel-copper in the directory target/release.
+
+## Contribute
+
+This is a very young project with a small feature set. Two types of input I would like to get are feature requests of things you are missing and of course bug reports.
