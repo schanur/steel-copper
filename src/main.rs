@@ -47,7 +47,8 @@ fn first_machine_path_in_collectd_path() -> Option<String> {
 
 
 lazy_static! {
-   static ref DATA_SOURCE_BASE_PATH: String = first_machine_path_in_collectd_path().unwrap();
+    static ref DATA_SOURCE_BASE_PATH: String = first_machine_path_in_collectd_path()
+        .expect(&(String::from("No RRD data path found in collectd base path: ") + COLLECTD_RRD_DATA_BASE_PATH));
 }
 
 
