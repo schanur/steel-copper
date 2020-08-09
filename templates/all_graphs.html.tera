@@ -4,6 +4,10 @@
     <title>Steel-Copper System Monitoring</title>
 
     <style>
+
+      /* steel color:  #6f6f6f */
+      /* copper color: #8e402a */
+
       body {
         /* background-color: DimGrey; */
         background-color: #202020;
@@ -15,7 +19,34 @@
         color: maroon;
         /* margin-left: 40px; */
       }
-</style>
+
+      .sc-area-header {
+        border-color:  #101010;
+        border-width:  1px;
+        border-style:  solid;;
+        font-size:     300%;
+        font-weight:   bold;
+        text-align:    center;
+        width:         80%;
+        text-shadow:   0 0 8px black;
+        /* -webkit-text-stroke: 2px black; */
+        /* color:         #dddddd; */
+        /* color:         black; */
+        color:         #ddd;
+        /* -webkit-text-stroke: 1px #000; */
+        /* display:       inline-block; */
+        margin:        auto;
+        margin-bottom: 70px;
+        background:    linear-gradient(to bottom,  #6f6f6f 0%,#6f6f6f 50%, #8e402a 50%, #8e402a 100%);
+      }
+
+      .sc-area-main {
+        /* font-size:  300%; */
+        text-align: center;
+      }
+    </style>
+
+
   </head>
   <body>
     <div class="sc-area-header">
