@@ -115,12 +115,12 @@ fn rrd_files_in_data_source(data_source_name: &str) -> std::vec::Vec<String> {
 fn rrdgraph_command(args: Vec<&str>) -> Vec<u8> {
     Command::new("rrdtool")
         .arg("graph")
-        .arg("-")              // write to stdout
+        .arg("-")                                      // write to stdout
         .arg("--start").arg((-86400 * 2).to_string())
         // .arg("-u").arg("100")
         .arg("-l").arg("0")
-        .arg("-w").arg("800") // width
-        .arg("-h").arg("200")  // height
+        .arg("-w").arg("800")                          // width
+        .arg("-h").arg("200")                          // height
         .arg("-r")
         .args(args)
         .args(RRDGRAPH_COLOR_THEME_DARK)
@@ -151,7 +151,7 @@ fn graph(
 {
     let rrd_abs_filesystem_filename = String::from(&*DATA_SOURCE_BASE_PATH) + "/" + &data_source_name + "/" + &rrd_filename;
     let output = rrdgraph_command(vec![
-        &["DEF:user=", &rrd_abs_filesystem_filename, ":value:AVERAGE"].concat(),     &["AREA:user#00ff00:\"", "test", "\""].concat()
+        &["DEF:user=", &rrd_abs_filesystem_filename, ":value:AVERAGE"].concat(), &["AREA:user#00ff00:\"", "test", "\""].concat()
     ]);
     let response = Content(ContentType::PNG, output);
     response
