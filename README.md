@@ -19,8 +19,16 @@ If you want to modify startup parameter (TCP port, etc.), you have multiple opti
 
 * collectd service has to be installed and running to create/update periodic sample databases (rrd database files).
 * rrdgraph binary is required to render the graphs. On most Linux distributions, the tool is included in the rrdtool package.
+* nightly version of Rust. This will change in the near future, so that stable Rust will be able to build it.
 
-## Build
+## Installation
+
+```
+cargo +nightly install steel-copper
+```
+installs the steel-copper binary.
+
+## Building from source
 
 ```
 cargo build --release
